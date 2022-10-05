@@ -1,0 +1,112 @@
+ .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 40px 0px 40px;
+}
+
+ .cardRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 40px 0px 85px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+    margin: 0px 30px 0px 40px;  
+}
+
+.column img {
+  margin: 10px 0px 10px 0px;
+  vertical-align: middle;
+  width: 100%;   
+ }
+ 
+ .cardColumn {
+  flex: 25%;
+  max-width: 25%;
+    margin: 20px 0px 0px -56px;  
+}
+ 
+ .cardColumn img {  
+  margin: 5px 0px 0px 20px;  
+  vertical-align: middle;
+  width: 78%;  
+ }
+ 
+img:hover{
+	   border:solid 8px rgb(0, 0, 0); 
+}
+.column .caption {
+      position: absolute;
+      width: 283px;
+      height: 50px;
+      bottom: 0px;
+      left: 0px;
+      color: #ffffff;
+      background: green;
+      text-align:center;
+      font-weight:bold;
+      opacity:0.7;
+    }
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+	.myDecks {  
+  margin: -160px 150px 0px 150px;
+  background-image: url("/images/pokemonbackground.png")
+	}
+	
+	.carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+}
+
+.cards {
+	margin: 0px 150px 0px 150px;
+}
+h1 {
+	margin: 40px 0px 40px 0px;
+	color:rgb(255, 255, 255)
+}
+h2 {
+	color:rgb(255, 255, 255)
+}
+.form-group {
+	box-align: right;
+	max-width: 130px;
+	margin: 0px 0px 0px 20px;
+}
+h3 {
+	color:aliceblue;
+	margin: 0px 0px 0px 35px;
+}
+h4 {
+		
+	color:aliceblue;
+}
+.modal-title {
+	color:black
+}
+
+p {    
+    display: inline-block;
+    vertical-align: top;
+}

@@ -1,0 +1,73 @@
+<html xmlns:th="http:www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate.html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+	th:href="@{/assets/css/button.css}" />
+	<!--<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/css/ABstyle.css}" /> -->
+    <title>Home Page</title>
+    <link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+</head>
+
+<!--Main page using default template-->
+<body>
+<div layout:fragment="content">
+<div class="container" align="center">
+
+<!--Search bar to allow user to search cards by type, name, etc | For future implementation (is not hooked up functionally)-->
+<form>
+  <div class="input-group">
+   <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span id="search_concept">Type  </span><span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#contains">Fire</a></li>
+                      <li><a href="#its_equal">Lightning </a></li>
+                      <li><a href="#greather_than">Water</a></li>
+                      <li><a href="#less_than">Grass</a></li>                      
+                      <li><a href="#all">Psychic</a></li>
+                      <li><a href="#all">Fighting</a></li>
+                      <li><a href="#all">Darkness</a></li>
+                      <li><a href="#all">Metal</a></li>
+                      <li><a href="#all">Colorless</a></li>
+                      <li><a href="#all">Fairy</a></li>
+                      <li><a href="#all">Dragon</a></li>
+                    </ul>
+                </div>
+    <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+<table style="width:50%">
+		<thead>
+			<tr>
+				<th style="text-align:center">Name</th>
+				<th style="text-align:center">Type</th>
+				<th style="text-align:center">Graphic?</th>
+				<th style="text-align:center">Image</th>
+				<th style="text-align:center">Rare Status</th>
+				<th style="text-align:center">Condition</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="card : ${cards}">
+				<td style="text-align:center"><h5 th:text="${card.name}">Card</h5></td>
+				<td style="text-align:center"><h5 th:text="${card.type}">Type</h5></td>
+				<td style="text-align:center"><h5 th:text="${card.isGraphic}">Graphic?</h5></td>
+				<td style="text-align:center"><h5 th:text="${card.image}">Image</h5></td>
+				<td style="text-align:center"><h5 th:text="${card.rareStatus}">Rare Status</h5></td>
+				<td style="text-align:center"><h5 th:text="${card.condition}">Condition</h5></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+</body>
+</html>

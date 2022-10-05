@@ -1,0 +1,26 @@
+<html xmlns:th="http:www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate.html">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/button.css}" />
+	<!--<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/css/ABstyle.css}" /> -->
+	<title>About Page</title>
+	<link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+</head>
+
+<!--Place holder page for future implementation-->
+
+<body>
+	<div layout:fragment="content">
+		<div class="container" align="center">
+			<h2 th:text="${message}">This is my default text</h2><br />
+			<img width="220px" height="70px" th:src="@{/images/PokemonSymbol.jpg}" /><br /><br />
+		</div>
+	</div>
+</body>
+
+</html>

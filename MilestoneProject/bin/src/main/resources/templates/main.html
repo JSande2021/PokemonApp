@@ -1,0 +1,52 @@
+<html xmlns:th="http:www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate.html">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/button.css}" />
+	<!--<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/css/ABstyle.css}" /> -->
+	<title>Home Page</title>
+	<link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+</head>
+
+<!--Main page using default template-->
+
+<body>
+	<div layout:fragment="content">
+		<div class="container" align="center">
+			<div name="logo">
+				<p><img src="images/pokemon-4657023_960_720.png" /></p>
+			</div>
+
+			<!--Center container block to align the create deck and browse panels-->
+			<div class="center-block">
+				<!--Row that contains the create deck and browse panels-->
+				<div class="row">
+					<!--Create deck panel-->
+					<div class="col-xs-12 col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<button type="button" class="btn btn-default">New Deck</button>
+							</div>
+							<div class="panel-footer">Panel footer</div>
+						</div>
+					</div>
+					<!--Browse panel-->
+					<div class="col-xs-12 col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<button type="button" class="btn btn-default" href="/index">Browse</button>
+							</div>
+							<div class="panel-footer">Panel footer</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

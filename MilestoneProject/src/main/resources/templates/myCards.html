@@ -1,0 +1,85 @@
+<html xmlns:th="http:www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate.html">
+<html lang="en">
+
+<head>
+	<title>Cards</title>
+	<link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- 	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/deckcard.css}" /> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/button.css}" />
+
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="myDecks">
+			
+			<h1> Cards </h1>
+	
+			<div align="left">
+				<!--Dropdown to select order that cards are displayed (not functionally implemented) -->
+				<div class="form-group">
+<!-- 					<label for="selections">Order By</label>
+					<select class="form-control selectpicker">
+						<option value="">Order By</option>
+						<option value=""> Combat Power </option>
+						<option value="">Alphabetically</option>
+						<option value="">Size</option>
+						<option value="">Type</option>
+					</select> -->
+
+					<!--Create new Card Button (opens create card modal)-->
+						<form th:action="@{/newCard}" th:method="get">
+							<button type="submit" id="submitButton" class="glow-on-hover">Add</button>
+						</form>
+				</div>
+			</div>
+
+	<div class="datatable" align="center">
+		
+		<!-- Table containing all Contact information for all Contacts in the Address Book -->
+		<table class="table table-dark">
+			<thead>
+				<tr>
+					<th scope="col">Edit</th>
+					<th scope="col">Name</th>
+					<th scope="col">Type</th>
+					<th scope="col">Rare</th>
+					<th scope="col">Condition</th>
+					<th scope="col">Image</th>
+					<th scope="col">Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="Card: ${cards}">
+
+					<td>
+						<form action="#" th:action="@{/myCards/edit(id=${Card.id})}" th:method="post">
+							<input type="hidden" name="_method" value="edit" />
+							<button type="submit" id="submitButton" class="glow-on-hover">Edit</button>
+						</form>
+					</td>
+					<td th:text="${Card.name}">name</td>
+					<td th:text="${Card.type}">type</td>
+					<td th:text="${Card.rareStatus}">rare</td>
+					<td th:text="${Card.condition}">condition</td>
+					<td th:text="${Card.image}">image</td>
+					<td>
+						<form th:action="@{/myCards/delete(id=${Card.id})}" th:method="delete">
+							<button type="submit" id="submitButton" class="glow-on-hover">Delete</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		</div> 
+		</div>
+</body>
+
+</html>

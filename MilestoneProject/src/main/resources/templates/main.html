@@ -1,0 +1,62 @@
+<html xmlns:th="http:www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate.html">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/button.css}" />
+	<!--<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/css/ABstyle.css}" /> -->
+	<title>Home Page</title>
+	<link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+</head>
+
+<!--Main page using default template-->
+
+<body>
+	<div layout:fragment="content">
+		<!-- Modal -->
+		<!--<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Login</h4>
+					</div>
+					<div class="modal-body">
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>-->
+
+		<!-- Logo for the site -->
+		<p><img src="images/pcb-title.png" /></p>
+<br/>
+		<!-- Container for the create deck and browse panels -->
+		<div class="container" align="center">
+			<!--Center container block to align the create deck and browse panels-->
+			<div class="center-block">
+				<!--Row that contains the create deck and browse panels-->
+				<div class="row">
+
+					<!--Browse panel-->
+					<div class="col-sm-6 col-sm-offset-3">
+  						<div class="panel panel-default">
+							<div class="panel-heading" style="align: center; font-weight: bold;">Browse Cards</div>
+							<div class="panel-body">
+								<a type="button" class="btn" href="/index"><img src="images/pokemon-search.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

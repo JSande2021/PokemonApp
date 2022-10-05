@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- @Author Joeseph Sande -->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>New Card</title>
+	<link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- 	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/deckcard.css}" /> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: #3F4045">
+	<form action="#" th:action="@{/myCards}" th:method="get">
+		<input type="hidden" name="_method" value="edit" />
+		<button type="submit" style="border-radius: 50px" id="submitButton"
+			class="glow-on-hover">Back</button>
+	</form>
+
+	<div class="container" align="center">
+
+		<h1 align="center" style="color: white">Card Management System</h1>
+		<hr>
+		<h2 align="center" style="color: white">Create New Card</h2>
+
+		<form action="#" th:action="@{/saveCard}"
+			th:object="${Card}" method="POST">
+			
+				<input required type="text" th:field="*{name}" name="name" placeholder="Card Name" class="form-control mb-4"> 
+				<input required type="text" th:field="*{type}" name="type" placeholder="Card Type" class="form-control mb-4"> 
+				<input required type="text" th:field="*{rareStatus}" name="rareStatus" placeholder="Card RareStatus" class="form-control mb-4"> 
+				<input required type="text" th:field="*{image}" name="image" placeholder="Card Image" class="form-control mb-4"> 
+				<input required type="text" th:field="*{condition}" name="condition" placeholder="Card Condition" class="form-control mb-4">
+			
+			<button type="submit" class="glow-on-hover">Save</button>
+		</form>
+	</div>
+</body>
+</html>

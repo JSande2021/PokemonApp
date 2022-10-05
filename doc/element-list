@@ -1,0 +1,10 @@
+com.example.demo
+com.milestone
+com.project
+com.project.api
+com.project.controller
+com.project.data
+com.project.data.entity
+com.project.data.repository
+com.project.model
+com.project.service

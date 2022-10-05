@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- @Author Joeseph Sande -->
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>User Registration System</title>
+	<link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+	<!-- integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" -->
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/assets/css/ABstyle.css}" /> -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/button.css}" />
+</head>
+
+<!--New user page that contains a form to register new users, does not use default template and migt be replaced by a modal in a future implementation-->
+
+<body style="background-color: rgb(233, 238, 239)">
+
+	<!--Back button due to lack of navbar-->
+	<form action="#" th:action="@{/}" th:method="get">
+		<input type="hidden" name="_method" value="edit" />
+		<button type="submit" style="border-radius: 50px" id="submitButton" class="glow-on-hover">Back</button>
+	</form>
+
+	<div class="container" align="center">
+
+		<h1 align="center">User Registration System</h1>
+		<hr>
+		<h2 align="center">Create New User</h2>
+
+
+		<!--Registration form-->
+		<form action="#" th:action="@{/saveUser}" th:object="${User}" method="POST">
+
+			<input required type="text" th:field="*{fName}" placeholder="First Name" class="form-control mb-4">
+			<input required type="text" th:field="*{lName}" placeholder="Last Name" class="form-control mb-4">
+			<input required type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4">
+			<input required type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4">
+			<input required type="text" th:field="*{phoneNumber}" placeholder="Phone Number" class="form-control mb-4">
+			<input required type="text" th:field="*{username}" placeholder="Username" class="form-control mb-4">
+			<input required type="text" th:field="*{password}" placeholder="Password" class="form-control mb-4">
+
+			<button type="submit" class="glow-on-hover">Save</button>
+		</form>
+	</div>
+</body>
+
+</html>

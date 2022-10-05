@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- @Author Joeseph Sande -->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Card Creation System</title>
+<link rel="icon" href="/images/pokemon-4657023_960_720.png" type="image/x-icon">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<!-- integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" -->
+<!--<link rel="stylesheet" type="text/css" th:href="@{/assets/css/ABstyle.css}" /> -->
+<link rel="stylesheet" type="text/css" th:href="@{/assets/css/button.css}" />
+</head>
+
+<!--New user page that contains a form to create new cards, does not use default template-->
+<body style="background-color: rgb(233, 238, 239)">
+	
+	<!--Back button due to lack of navbar-->
+	<form action="#" th:action="@{/}" th:method="get">
+		<input type="hidden" name="_method" value="edit" />
+		<button type="submit" style="border-radius: 50px" id="submitButton" class="glow-on-hover">Back</button>
+	</form>
+	<div class="container" align="center">
+		<h1 align="center">Card Creation System</h1>
+		<hr>
+		<h2 align="center">Create New Card</h2>
+	<!--Card Creation form-->
+		<form action="#" th:action="@{/saveCard}"
+			th:object="${Card}" method="POST">
+			<input required type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4"> 
+			<input required type="text" th:field="*{type}" placeholder="Type" class="form-control mb-4"> 
+			<p>Is this card a graphic card? If so please check the box below:</p><input type="checkbox" name="mycheckbox" th:checked="${isGraphic} ? 'checked'">
+			<input required type="text" th:field="*{image}" placeholder="Image" class="form-control mb-4"> 
+			<input required type="text" th:field="*{rareStatus}" placeholder="Rare Status" class="form-control mb-4"> 
+			<input required type="text" th:field="*{condition}" placeholder="Condition" class="form-control mb-4"> 
+			<button type="submit" class="glow-on-hover">Save</button>
+		</form>
+	</div>
+</body>
+</html>
