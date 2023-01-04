@@ -1,5 +1,3 @@
-# CST339-BrianAndJoeseph-MilestoneApplication
-CLC Project for Brian and Joeseph
+# Pokemon Card Book Application
+Joeseph Sande
 
-Grand Canyon University
-Class - CST-339
